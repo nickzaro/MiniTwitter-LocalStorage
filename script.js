@@ -30,11 +30,35 @@ function agregarTweet(e) {
     itemTweet.appendChild(botonBorrar);
     //añadiendo el div mensaje a la lista de mensajes
     listaTweets.appendChild(itemTweet);
+
+
+    //agregar a LocalStorage
+    agregarTweetALocalStorage(tweet);
 }
 
 function borrarTweet(e) {
     e.preventDefault();
     if (e.target.className === 'borrar-tweet') {
-        e.target.parentElement.remove()
+        e.target.parentElement.remove();
     }
+}
+
+function agregarTweetALocalStorage(tweet) {
+    let tweets;
+    
+    // agrego al local storage
+    tweets= obtenerTweetLocalStorage();
+    tweets.push(tweet);
+    localStorage.setItem('tweets',JSON.stringify(tweets));
+}
+
+function obtenerTweetLocalStorage() {
+    let tweets ;
+    if (localStorage.getItem('tweets') === null) {
+        tweets = [];
+    } else {
+        console.log(localStorage.getItem('tweets'));
+        tweets = JSON.parse(localStorage.getItem('tweets'));
+    }
+    return tweets;
 }
