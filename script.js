@@ -49,7 +49,7 @@ function borrarTweet(e) {
     e.preventDefault();
     if (e.target.className === 'borrar-tweet') {
         e.target.parentElement.remove();
-        tweet =e.target.parentElement.getElementsByTagName('li')[0].innerText;
+        tweet = e.target.parentElement.getElementsByTagName('li')[0].innerText;
         console.log(tweet);
         borrarTweetDelLocalStorage(tweet);
     }
@@ -92,9 +92,9 @@ function obtenerTweetLocalStorage() {
 function borrarTweetDelLocalStorage(tweet) {
     let tweets;
     tweets = obtenerTweetLocalStorage();
-    tweets.forEach((element , index) => {
-        if(tweet === element){
-            tweets.splice(index,1);
+    tweets.forEach((element, index) => {
+        if (tweet === element) {
+            tweets.splice(index, 1);
         }
     });
     // Modificando el localStorage
