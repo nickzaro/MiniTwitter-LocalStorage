@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Almacenar mensajes usando Local Storage</title>
-    </head>
-    <body>
-        
-    </body>
-    <script src="script.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <title>Almacenar mensajes usando Local Storage</title>
+</head>
+
+<body>
+    <div id="contenido">
+        <div class="contenedor">
+            <h1>Tweets con LocalStorage</h1>
+            <div class="seis-columnas">
+                <form action="#" id="formulario">
+                    <label for="lblTweet">Tweet:</label>
+                    <textarea id="txtTweet" class="u-full-width"></textarea>
+                    <input type="submit" class="boton-u-full-width-primary" value="Agregar">
+                </form>
+            </div>
+            <div class="seis-columnas">
+                <h2>Mis Tweets</h2>
+                <div id="lista-tweets"></div>
+            </div>
+        </div>
+    </div> <!--Fin del contenido-->
+</body>
+<script src="script.js"></script>
 </html>
